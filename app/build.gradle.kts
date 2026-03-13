@@ -27,7 +27,25 @@ android {
                 "proguard-rules.pro"
             )
         }
+
     }
+
+    flavorDimensions += "theme"
+    productFlavors {
+        create("theme-orange") {
+            dimension = "theme"
+            applicationIdSuffix = ".orange"
+            versionNameSuffix = "-orange"
+        }
+
+        create("theme-blue") {
+            dimension = "theme"
+            applicationIdSuffix = ".blue"
+            versionNameSuffix = "-blue"
+        }
+
+    }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
