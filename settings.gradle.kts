@@ -21,4 +21,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "Build Variant Test"
 include(":app")
- 
+include(":blueapp")

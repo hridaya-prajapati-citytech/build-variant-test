@@ -9,6 +9,8 @@ android {
         version = release(36)
     }
 
+
+
     defaultConfig {
         applicationId = "com.example.buildvarianttest"
         minSdk = 24
@@ -31,19 +33,31 @@ android {
     }
 
     flavorDimensions += "theme"
+
     productFlavors {
         create("theme-orange") {
             dimension = "theme"
             applicationIdSuffix = ".orange"
             versionNameSuffix = "-orange"
+            buildConfigField("Boolean", "IS_ORANGE", "true")
+            buildConfigField("String", "COLORCODE", "\"Orange\"")
         }
 
         create("theme-blue") {
             dimension = "theme"
             applicationIdSuffix = ".blue"
             versionNameSuffix = "-blue"
+            buildConfigField("boolean", "IS_BLUE", "true")
+            buildConfigField("String", "COLORCODE", "\"Blue\"")
         }
 
+    }
+
+    buildFeatures {
+        buildConfig = true
+        viewBinding {
+            enable = true
+        }
     }
 
     compileOptions {
